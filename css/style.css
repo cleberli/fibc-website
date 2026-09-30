@@ -1,0 +1,902 @@
+/* ============================================
+   吨袋网站 - 主样式表
+   主色调：工业蓝 #0056A6  橙色 #FF6B00  深灰 #333
+   风格：工厂硬朗，无圆角
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0056A6;
+  --primary-dark: #003D75;
+  --primary-light: #E6F0FA;
+  --accent: #FF6B00;
+  --accent-dark: #CC5500;
+  --dark: #1A1A1A;
+  --gray: #666;
+  --gray-light: #999;
+  --border: #E5E5E5;
+  --bg: #F8F9FA;
+  --white: #FFF;
+  --success: #28A745;
+  --danger: #DC3545;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Microsoft YaHei', 'PingFang SC', Roboto, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--dark);
+  background: var(--white);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========== 顶部导航 ========== */
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  border-bottom: 3px solid var(--primary);
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.logo-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  color: var(--dark);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 0;
+  position: relative;
+}
+
+.nav a.active::after,
+.nav a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+}
+
+.lang-switch {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-switch button {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--gray);
+  transition: all 0.2s;
+}
+
+.lang-switch button.active,
+.lang-switch button:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/* ========== Banner ========== */
+.banner {
+  position: relative;
+  height: 540px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+}
+
+.banner-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.banner-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 13px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.banner h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 36px;
+  max-width: 720px;
+}
+
+.banner-btns {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: var(--white);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.btn-lg {
+  padding: 16px 40px;
+  font-size: 16px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* ========== 数据统计 ========== */
+.stats {
+  background: var(--white);
+  padding: 50px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-item .stat-num {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.stat-item .stat-label {
+  font-size: 15px;
+  color: var(--gray);
+  margin-top: 12px;
+}
+
+/* ========== 通用区块 ========== */
+.section {
+  padding: 80px 0;
+}
+
+.section-alt {
+  background: var(--bg);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 16px;
+  color: var(--gray);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ========== 优势卡片 ========== */
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.adv-card {
+  padding: 40px 28px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.adv-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 86, 166, 0.12);
+}
+
+.adv-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 32px;
+}
+
+.adv-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+
+.adv-card p {
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ========== 产品卡片 ========== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.product-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.product-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.product-image {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(135deg, var(--primary-light), #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.product-info {
+  padding: 24px;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+
+.product-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.spec-tag {
+  padding: 4px 10px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+}
+
+.product-desc {
+  color: var(--gray);
+  font-size: 13px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  height: 60px;
+  overflow: hidden;
+}
+
+.product-link {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-link::after {
+  content: ' →';
+}
+
+/* ========== 应用领域 ========== */
+.applications {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.app-card {
+  background: var(--white);
+  padding: 32px 24px;
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s;
+}
+
+.app-card:hover {
+  border-left-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.app-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.app-card h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.app-card p {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ========== 客户 Logo 墙 ========== */
+.logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.logo-item {
+  height: 80px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--gray);
+  transition: all 0.2s;
+}
+
+.logo-item:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ========== 客户评价 ========== */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial {
+  background: var(--white);
+  padding: 32px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.testimonial::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  font-size: 80px;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.testimonial-text {
+  color: var(--dark);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  padding-top: 16px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.author-info h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.author-info p {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+/* ========== 询盘 CTA ========== */
+.cta {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.cta p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 36px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========== 表单样式已移除 ========== */
+
+/* ========== 页脚 ========== */
+.footer {
+  background: #1A1A1A;
+  color: #999;
+  padding: 60px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4 {
+  color: var(--white);
+  font-size: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col a {
+  color: #999;
+  font-size: 13px;
+}
+
+.footer-col a:hover {
+  color: var(--white);
+}
+
+.footer-contact p {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ========== 页面通用 ========== */
+.page-banner {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  padding: 60px 0 40px;
+  text-align: center;
+}
+
+.page-banner h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.breadcrumb a {
+  color: var(--white);
+}
+
+/* ========== FAQ ========== */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.faq-q {
+  padding: 20px 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  user-select: none;
+}
+
+.faq-q::after {
+  content: '+';
+  font-size: 24px;
+  color: var(--primary);
+  transition: transform 0.2s;
+}
+
+.faq-item.open .faq-q::after {
+  transform: rotate(45deg);
+}
+
+.faq-a {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s, padding 0.3s;
+  color: var(--gray);
+}
+
+.faq-item.open .faq-a {
+  padding: 0 24px 20px;
+  max-height: 300px;
+}
+
+/* ========== 产品筛选 ========== */
+.filter-bar {
+  background: var(--white);
+  padding: 24px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.filter-label {
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.filter-chip {
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.filter-chip.active,
+.filter-chip:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+/* ========== 证书展示 ========== */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.cert-card {
+  background: var(--white);
+  padding: 32px 16px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+
+.cert-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(0, 86, 166, 0.1);
+}
+
+.cert-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--primary-light);
+  color: var(--primary);
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.cert-card h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.cert-card p {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 1024px) {
+  .advantages, .applications {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .products, .testimonials {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .logos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav, .lang-switch {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .banner {
+    height: auto;
+    padding: 60px 0;
+  }
+  .banner h1 {
+    font-size: 32px;
+  }
+  .banner p {
+    font-size: 15px;
+  }
+  .stats-grid, .advantages, .products,
+  .applications, .testimonials, .certs {
+    grid-template-columns: 1fr;
+  }
+  .logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 26px;
+  }
+  .stats-grid .stat-num {
+    font-size: 36px;
+  }
+  .banner-btns {
+    flex-direction: column;
+  }
+  .nav.mobile-open {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+}
+
+/* 动画 */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E6F0FA"/>
+      <stop offset="100%" stop-color="#F8F9FA"/>
+    </linearGradient>
+    <linearGradient id="bag2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E5E5E5"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg2)"/>
+  <path d="M 130 80 L 270 80 L 290 280 L 110 280 Z" fill="url(#bag2)" stroke="#999" stroke-width="2"/>
+  <path d="M 150 80 Q 165 50 180 80" stroke="#999" stroke-width="3" fill="none"/>
+  <path d="M 220 80 Q 235 50 250 80" stroke="#999" stroke-width="3" fill="none"/>
+  <!-- FDA badge -->
+  <circle cx="280" cy="100" r="25" fill="#28A745"/>
+  <text x="280" y="107" text-anchor="middle" font-family="Arial" font-size="14" fill="white" font-weight="bold">FDA</text>
+  <text x="200" y="170" text-anchor="middle" font-family="Arial" font-size="20" fill="#0056A6" font-weight="bold">FOOD</text>
+  <text x="200" y="195" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">GRADE</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Arial" font-size="12" fill="#999">1000kg / 5:1</text>
+</svg>
